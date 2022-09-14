@@ -1,0 +1,15 @@
+[package]
+name = "s3lib"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+rusoto_core = "0.46.0"
+rusoto_credential = "0.46.0"
+rusoto_s3 = "0.46.0"
+strum = { version = "0.21.0", features = ["derive"] }
+thiserror = "1.0.25"
+tokio = { version = "1.7.1", features = ["full"] }

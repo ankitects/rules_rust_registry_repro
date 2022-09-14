@@ -1,0 +1,15 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library", "rust_test")
+load("@cratesweb//:defs.bzl", "all_crate_deps")
+
+rust_library(
+    name = "warplib",
+    srcs = glob(["*.rs"]),
+    visibility = ["//visibility:public"],
+    deps = all_crate_deps("//rust/warplib:Cargo.toml") + [
+    ],
+)
+
+rust_test(
+    name = "tests",
+    crate = ":warplib",
+)
